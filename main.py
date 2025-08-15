@@ -1,6 +1,7 @@
 from kittentts import KittenTTS
 import sounddevice as sd
 from enum import Enum
+import soundfile as sf
 
 
 class Speakers(Enum):
@@ -20,9 +21,18 @@ def speak(what: str = "this is a test", speaker: Speakers = Speakers.ALICE):
     sd.play(audio, samplerate)
     sd.wait()
 
+    sf.write("output.wav", audio, samplerate)
+
 
 if __name__ == "__main__":
     speak(
-        "Some men see things as they are and say why. I dream things that never were and say why not",
-        speaker=Speakers.BOB,
+        """
+		God, what have you done?,
+		You're a pink pony girl,
+		And you dance at the club,
+		Oh mama, I'm just having fun,
+		On the stage in my heels,
+		It's where I belong down at the Pink Pony Club.
+		""",
+        speaker=Speakers.ALICE,
     )
