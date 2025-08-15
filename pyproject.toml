@@ -1,0 +1,15 @@
+[project]
+name = "kitten"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "kittentts",
+    "rich>=14.1.0",
+    "sounddevice>=0.5.2",
+    "soundfile>=0.13.1",
+]
+
+[tool.uv.sources]
+kittentts = { url = "https://github.com/KittenML/KittenTTS/releases/download/0.1/kittentts-0.1.0-py3-none-any.whl" }
